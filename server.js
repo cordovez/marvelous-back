@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
     const response = await axios.get(
       `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}`
     );
-    res.status(200).json(response.data.results);
+    res.status(200).json(response.data);
   } catch (error) {
     console.log(error.message);
   }
@@ -25,7 +25,8 @@ app.get("/comics", async (req, res) => {
     const response = await axios.get(
       `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}`
     );
-    res.status(200).json(response.data.results);
+    console.log(response.data);
+    res.status(200).json(response.data);
   } catch (error) {
     console.log(error.message);
   }
@@ -48,5 +49,5 @@ app.all("*", (req, res) => {
 
 //// LAUNCH SERVER ///
 app.listen(5000, () => {
-  console.log("Server started");
+  console.log("Server started 🍾 ");
 });

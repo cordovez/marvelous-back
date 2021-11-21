@@ -32,16 +32,16 @@ app.get("/comics", async (req, res) => {
   }
 });
 // show comics with specific characters//
-// app.get("/comics/:characterID", async (req, res) => {
-//   try {
-//     const response = await axios.get(
-//       `https://lereacteur-marvel-api.herokuapp.com/comics/${characterID}?apiKey=${process.env.API_KEY}`
-//     );
-//     res.status(200).json(response.data);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// });
+app.get("/comics/:characterID", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://lereacteur-marvel-api.herokuapp.com/comics/{query.params}?apiKey=${process.env.API_KEY}`
+    );
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 app.all("*", (req, res) => {
   res.status(404).json({ message: "That page does not exist" });

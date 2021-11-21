@@ -17,6 +17,7 @@
     "express-formidable": "^1.2.0",
     "mongodb": "^4.2.0",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "react-router": "^6.0.2"
   }
 }
